@@ -1,0 +1,9 @@
+---
+keys:
+- https://packages.microsoft.com/keys/microsoft.asc
+repos:
+- deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main
+packages:
+- msodbcsql17=17.5.2.1-1
+- mssql-tools
+- unixodbc-dev

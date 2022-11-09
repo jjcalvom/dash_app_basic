@@ -1,0 +1,5 @@
+# Workers vs Threads:
+# https://stackoverflow.com/questions/38425620/gunicorn-workers-and-threads/41696500#41696500
+#
+# Add more workers (-w <num>) only if you have a truly heavy workload that needs to be fully parallel
+web: gunicorn --timeout 800 dash_app:server
