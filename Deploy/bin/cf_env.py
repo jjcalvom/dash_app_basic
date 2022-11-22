@@ -20,5 +20,3 @@ CF_PROD_MEM       = "4096M"
 CF_PROD_DISK      = "4096M"
 CF_NON_PROD_MEM   = "4096M"
 CF_NON_PROD_DISK  = "4096M"
-CF_USERNAME       = os.environ.get('CF_USERNAME')
-CF_PASSWORD       = os.environ.get('CF_PASSWORD')

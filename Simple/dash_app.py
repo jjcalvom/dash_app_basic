@@ -184,69 +184,6 @@ app.layout = html.Div([
 
 # Create callbacks #
 
-# Three levels of complexity here:
-
-# 1. Make the two dropdowns work at the top.
-
-# @app.callback(
-#     Output('big_graph', 'figure'),
-#     Input('devrevstep_dropdown','value'),
-#     Input('facility_dropdown','value')
-    
-# )
-
-# def update_graph(devrevstep, facility):
-    
-#     # Filter Data
-#     data_filtered = data[(data['devrevstep'].isin(devrevstep)) & (data['ppv_site'].isin(facility))]
-    
-#     # Create Graph
-#     data_to_graph_filtered = pd.DataFrame(
-#     data_filtered[data_filtered['final_bucket_name'].isin(['THe','THc'])].groupby([
-#         'final_bucket_name', 's_spec'],
-#                  as_index=False).agg(count=('cl_incoming', 'count'))
-#     )
-#     fig_filtered = px.bar(
-#         data_to_graph_filtered, x="final_bucket_name", y="count",
-#         color='s_spec')
-    
-#     return fig_filtered
-    
-
-# 2. Make the Range Slider to filter the radius column.
-
-# @app.callback(
-#     Output('big_graph', 'figure'),
-#     Input('devrevstep_dropdown','value'),
-#     Input('facility_dropdown','value'),
-#     Input('my_range_slider','value')
-# )
-
-# def update_graph(devrevstep, facility, range_slider_value):
-    
-#     # Filter Data using devrevstep and facility
-#     data_filtered = data[
-#         (data['devrevstep'].isin(devrevstep)) & 
-#         (data['ppv_site'].isin(facility))]
-    
-#     # Filter Data using radius
-#     data_filtered = data_filtered[
-#         (data_filtered['radius'] >= range_slider_value[0]) & 
-#         (data_filtered['radius'] <= range_slider_value[1])]
-    
-#     # Create Graph
-#     data_to_graph_filtered = pd.DataFrame(
-#     data_filtered[data_filtered['final_bucket_name'].isin(['THe','THc'])].groupby([
-#         'final_bucket_name', 's_spec'],
-#                  as_index=False).agg(count=('cl_incoming', 'count'))
-#     )
-#     fig_filtered = px.bar(
-#         data_to_graph_filtered, x="final_bucket_name", y="count",
-#         color='s_spec')
-    
-#     return fig_filtered
-    
-    
 # 3. Use the button and filter start and end workweek.
 
 @app.callback(
